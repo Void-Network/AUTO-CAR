@@ -3,11 +3,28 @@
 # Importing the libraries
 
 import numpy as np
-import random
 import os
+import random
 import torch
-import torch.nn as nn
-import torch.nn.functional as F
 import torch.optim as optim
 import torch.autograd as autograd
+import torch.nn as nn
 from torch.autograd import Variable
+import torch.nn.functional as F
+import matplotlib as plt
+
+# The architecture of the Neural Network goes here
+
+class Network(nn.Module):
+    
+    def __init__(self, input_size, nos_action):#input_size => I/P Layer , nos_action => O/P Layer
+        super(Network, self).__init__()
+        self.input_size = input_size
+        self.nos_action = nos_action
+        self.fc1 = nn.Linear(input_size, 35) # Here only one Hidden layer is created with 35 neurons.
+        self.fc2 = nn.Linear(30, nos_action)
+    
+    def forward(self, state):
+        x = F.relu(self.fc1(state))
+        q_values = self.fc2(x)
+        return q_values
