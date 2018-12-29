@@ -19,8 +19,8 @@ class Network(nn.Module):
     
     def __init__(self, input_size, nos_action):#input_size => I/P Layer , nos_action => O/P Layer
         super(Network, self).__init__()
-        self.input_size = input_size
         self.nos_action = nos_action
+        self.input_size = input_size
         self.fc1 = nn.Linear(input_size, 35) # Here only one Hidden layer is created with 35 neurons.
         self.fc2 = nn.Linear(30, nos_action)
     
@@ -34,13 +34,13 @@ class Network(nn.Module):
 
 class ReplayMemory(object):
     
-    def __init__(self, capacity):
-        self.capacity = capacity
+    def __init__(self, cap):
+        self.cap = cap
         self.memory = []
     
     def push(self, event):
         self.memory.append(event)
-        if len(self.memory) > self.capacity:
+        if len(self.memory) > self.cap:
             del self.memory[0]
     
     def sample(self, batch_size):
