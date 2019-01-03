@@ -1,1 +1,13 @@
-
+<Car>:
+    size: 30, 15
+    canvas:
+        Color:
+            rgba: 1, 1, .4,1
+        PushMatrix
+        Rotate:
+            angle: self.angle
+            origin: self.center
+        Rectangle:
+            pos: self.pos
+            size: self.size
+        PopMatrix
