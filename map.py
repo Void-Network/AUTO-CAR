@@ -34,3 +34,17 @@ action2rotation = [0,20,-20]
 last_reward = 0
 scores = []
 
+# Initializing the map
+first_update = True
+def init():
+    global sand
+    global goal_x
+    global goal_y
+    global first_update
+    sand = np.zeros((longueur,largeur))
+    goal_x = 20
+    goal_y = largeur - 20
+    first_update = False
+
+# Initializing the last distance
+last_distance = 0
