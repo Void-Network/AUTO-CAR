@@ -1,4 +1,4 @@
-# Self Driving Car
+# Auto-Car
 
 # Importing the libraries
 import numpy as np
@@ -52,7 +52,7 @@ last_distance = 0
 
 class Car(Widget):
     
-    angle = NumericProperty(0)
+    angle = NumericProperty(0) # initializing the angle of the car (angle between the x-axis of the map and the axis of the car)
     rotation = NumericProperty(0)
     velocity_x = NumericProperty(0)
     velocity_y = NumericProperty(0)
