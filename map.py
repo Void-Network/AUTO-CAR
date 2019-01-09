@@ -104,9 +104,9 @@ class Game(Widget):
     ball2 = ObjectProperty(None)
     ball3 = ObjectProperty(None)
 
-    def serve_car(self):
-        self.car.center = self.center
-        self.car.velocity = Vector(6, 0)
+    def serve_car(self):                  # starting the car when we launch the application
+        self.car.center = self.center     # the car will start at the center of the map
+        self.car.velocity = Vector(6, 0)  # the car will start to go horizontally to the right with a speed of 6
 
     def update(self, dt):
 
