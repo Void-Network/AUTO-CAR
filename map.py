@@ -71,7 +71,7 @@ class Car(Widget):
     signal3 = NumericProperty(0)
 
     def move(self, rotation):
-        self.pos = Vector(*self.velocity) + self.pos
+        self.pos = Vector(*self.velocity) + self.pos # updating the position of the car according to its last position and velocity
         self.rotation = rotation
         self.angle = self.angle + self.rotation
         self.sensor1 = Vector(30, 0).rotate(self.angle) + self.pos
