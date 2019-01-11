@@ -128,7 +128,7 @@ class Game(Widget):
         yy = goal_y - self.car.y
         orientation = Vector(*self.car.velocity).angle((xx,yy))/180.
         last_signal = [self.car.signal1, self.car.signal2, self.car.signal3, orientation, -orientation]
-        action = brain.update(last_reward, last_signal)
+        action = brain.update(last_reward, last_signal)# playing the action from our ai (the object brain of the dqn class)
         scores.append(brain.score())
         rotation = action2rotation[action]
         self.car.move(rotation)
