@@ -53,9 +53,9 @@ last_distance = 0
 class Car(Widget):
     
     angle = NumericProperty(0) # initializing the angle of the car (angle between the x-axis of the map and the axis of the car)
-    rotation = NumericProperty(0)
-    velocity_x = NumericProperty(0)
-    velocity_y = NumericProperty(0)
+    rotation = NumericProperty(0) # initializing the last rotation of the car (after playing the action, the car does a rotation of 0, 20 or -20 degrees)
+    velocity_x = NumericProperty(0) # initializing the x-coordinate of the velocity vector
+    velocity_y = NumericProperty(0) # initializing the y-coordinate of the velocity vector
     velocity = ReferenceListProperty(velocity_x, velocity_y)
     sensor1_x = NumericProperty(0)
     sensor1_y = NumericProperty(0)
