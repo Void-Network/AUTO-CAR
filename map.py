@@ -163,4 +163,10 @@ class Game(Widget):
             goal_x = self.width-goal_x
             goal_y = self.height-goal_y
         # Updating the last distance from the car to the goal
-        last_distance = distance
+ last_distance = distance
+
+class MyPaintWidget(Widget):
+        def on_touch_down(self, touch): # putting some sand when we do a left click
+        global length,n_points,last_x,last_y
+        with self.canvas:
+            Color(0.8,0.7,0)
