@@ -162,4 +162,5 @@ class Game(Widget):
         if distance < 100:
             goal_x = self.width-goal_x
             goal_y = self.height-goal_y
+        # Updating the last distance from the car to the goal
         last_distance = distance
