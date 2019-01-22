@@ -175,7 +175,7 @@ class MyPaintWidget(Widget):
             last_y = int(touch.y)
             n_points = 0
             length = 0
-            sand[int(touch.x),int(touch.y)] = 
+            sand[int(touch.x),int(touch.y)] = 1
             
         def on_touch_move(self, touch): # putting some sand when we move the mouse while pressing left
         global length,n_points,last_x,last_y
